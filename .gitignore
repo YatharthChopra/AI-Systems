@@ -10,6 +10,15 @@
 /[Bb]uilds/
 /[Ll]ogs/
 /[Uu]ser[Ss]ettings/
+
+# Unity project in subfolder
+AI Systems/[Ll]ibrary/
+AI Systems/[Tt]emp/
+AI Systems/[Oo]bj/
+AI Systems/[Bb]uild/
+AI Systems/[Bb]uilds/
+AI Systems/[Ll]ogs/
+AI Systems/[Uu]ser[Ss]ettings/
 *.log
 
 # By default unity supports Blender asset imports, *.blend1 blender files do not need to be commited to version control.
