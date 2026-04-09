@@ -10,6 +10,8 @@ public class SentinelCombatState : State
     CryptSentinel sentinel;
     float sightLostTimer;
     bool sightLost;
+    float attackCooldown = 1.5f;  // seconds between attacks
+    float attackTimer;
 
     public SentinelCombatState(CryptSentinel _sentinel)
     {
@@ -21,6 +23,7 @@ public class SentinelCombatState : State
         sentinel.agent.speed = sentinel.chargeSpeed;
         sightLostTimer = 0f;
         sightLost = false;
+        attackTimer = 0f;
     }
 
     public override void Execute()
@@ -37,10 +40,14 @@ public class SentinelCombatState : State
             sentinel.lastKnownPlayerPos = sentinel.playerTransform.position;
             sentinel.agent.SetDestination(sentinel.playerTransform.position);
 
-            // Attack if close enough
+            // Attack if close enough and cooldown has expired
             float dist = Vector3.Distance(sentinel.transform.position, sentinel.playerTransform.position);
-            if (dist <= sentinel.attackRange)
+            attackTimer -= Time.deltaTime;
+            if (dist <= sentinel.attackRange && attackTimer <= 0f)
+            {
                 Attack();
+                attackTimer = attackCooldown;
+            }
         }
         else
         {
