@@ -1,0 +1,30 @@
+# Unity generated folders
+[Ll]ibrary/
+[Tt]emp/
+[Oo]bj/
+[Bb]uild/
+[Bb]uilds/
+[Ll]ogs/
+[Uu]ser[Ss]ettings/
+
+# Visual Studio cache
+.vs/
+*.csproj
+*.sln
+
+# OS generated
+.DS_Store
+Thumbs.db
+
+# Local editor settings
+.claude/
+
+# Unity subfolder paths
+"AI Systems/Library/"
+"AI Systems/Temp/"
+"AI Systems/Logs/"
+"AI Systems/UserSettings/"
+AI\ Systems/Library/
+AI\ Systems/Temp/
+AI\ Systems/Logs/
+AI\ Systems/UserSettings/
